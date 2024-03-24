@@ -34,7 +34,7 @@ export default function Home() {
         Хаана ч ашиглаж болох зурагаа үүсгэж цаг зав мөнгөө хэмнэ!
         </p>
         <div className="flex flex-col space-y-2">
-          <Link href="/login">
+          <Link href="/faceswap">
             <Button className="w-full lg:w-1/2 bg-blue-600 text-white rounded-xl">Зураг үүсгэх</Button>
           </Link>
         </div>

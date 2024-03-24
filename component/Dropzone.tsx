@@ -68,7 +68,7 @@ function Dropzone(props: UploadProps) {
             })}>
                 <input {...getInputProps()} />
                 <p className="text-xl list-none w-full font-semibold opacity-80 text-black">{isDragged ?
-                    'Drop here' : type == 'face' ? files.length > 0 ? files : 'Drop Your Face' : files.length > 0 ? files : 'Drop your Background'}</p>
+                    'Drop here' : type == 'face' ? files.length > 0 ? files : 'өөрийн зургаа оруулна уу' : files.length > 0 ? files : 'эсрэг зургаа оруулна уу'}</p>
             </div>
         </section>
     );

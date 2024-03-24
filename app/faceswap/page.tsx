@@ -76,13 +76,13 @@ export default function FaceSwap() {
                  transition-opacity duration-300`}>
                   <a href={generatedImage} download="generated_image.png">
                     <button className="w-full rounded-lg font-bold cursor-pointer text-center bg-black text-green-600 px-4 py-2" >
-                      Download</button>
+                      Татах</button>
                   </a>
                 </div>
                 <img src={generatedImage} className="h-full object-cover rounded-lg" alt="Swapped Image" />
               </div>
               <button onClick={removeFiles} className="h-10 hover:border transition-all my-2 rounded-lg w-full
-              bg-white text-center font-bold flex items-center justify-center shadow-lg text-black">Clear Generation</button>
+              bg-white text-center font-bold flex items-center justify-center shadow-lg text-black">Хувиргалт цэвэрлэх</button>
             </div>
           )}
         </div>
