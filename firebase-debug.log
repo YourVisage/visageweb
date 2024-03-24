@@ -1,0 +1,56 @@
+[debug] [2024-03-24T15:51:03.551Z] ----------------------------------------------------------------------
+[debug] [2024-03-24T15:51:03.553Z] Command:       /Users/gantulga/.nvm/versions/node/v18.16.1/bin/node /Users/gantulga/.nvm/versions/node/v18.16.1/bin/firebase deploy
+[debug] [2024-03-24T15:51:03.553Z] CLI Version:   13.4.0
+[debug] [2024-03-24T15:51:03.553Z] Platform:      darwin
+[debug] [2024-03-24T15:51:03.553Z] Node Version:  v18.16.1
+[debug] [2024-03-24T15:51:03.554Z] Time:          Sun Mar 24 2024 23:51:03 GMT+0800 (Ulaanbaatar Standard Time)
+[debug] [2024-03-24T15:51:03.554Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-24T15:51:03.608Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-24T15:51:03.608Z] > authorizing via signed-in user (ch.gantulga54@gmail.com)
+[debug] [2024-03-24T15:51:03.608Z] [iam] checking project deepface-a1dfd for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-24T15:51:03.610Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions [none]
+[debug] [2024-03-24T15:51:03.610Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions x-goog-quota-user=projects/deepface-a1dfd
+[debug] [2024-03-24T15:51:03.610Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-24T15:51:04.896Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions 200
+[debug] [2024-03-24T15:51:04.897Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-24T15:51:04.898Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd [none]
+[debug] [2024-03-24T15:51:05.380Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd 200
+[debug] [2024-03-24T15:51:05.380Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd {"projectId":"deepface-a1dfd","projectNumber":"642212907515","displayName":"DeepFace","name":"projects/deepface-a1dfd","resources":{"hostingSite":"deepface-a1dfd","realtimeDatabaseInstance":"deepface-a1dfd-default-rtdb","storageBucket":"deepface-a1dfd.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_bd90b55b-bab1-4976-bad8-ba5803a6a675"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-03-24T15:51:11.677Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites/deepface-a1dfd [none]
+[debug] [2024-03-24T15:51:12.395Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites/deepface-a1dfd 200
+[debug] [2024-03-24T15:51:12.395Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites/deepface-a1dfd {"name":"projects/deepface-a1dfd/sites/deepface-a1dfd","defaultUrl":"https://deepface-a1dfd.web.app","type":"DEFAULT_SITE"}
+[info] You are using Node.js 18.16.1. For Next.js, Node.js version >= v18.17.0 is required.
+
+[debug] [2024-03-24T15:51:12.705Z] Error: ENOENT: no such file or directory, open '/Users/gantulga/Documents/diplomud/visagepro/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-03-24T15:51:57.352Z] ----------------------------------------------------------------------
+[debug] [2024-03-24T15:51:57.355Z] Command:       /usr/local/bin/firebase /Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2024-03-24T15:51:57.356Z] CLI Version:   13.0.2
+[debug] [2024-03-24T15:51:57.357Z] Platform:      darwin
+[debug] [2024-03-24T15:51:57.357Z] Node Version:  v18.5.0
+[debug] [2024-03-24T15:51:57.369Z] Time:          Sun Mar 24 2024 23:51:57 GMT+0800 (Ulaanbaatar Standard Time)
+[debug] [2024-03-24T15:51:57.370Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-24T15:51:57.593Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-24T15:51:57.595Z] > authorizing via signed-in user (ch.gantulga54@gmail.com)
+[debug] [2024-03-24T15:51:57.597Z] [iam] checking project deepface-a1dfd for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-24T15:51:57.602Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions [none]
+[debug] [2024-03-24T15:51:57.604Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions x-goog-quota-user=projects/deepface-a1dfd
+[debug] [2024-03-24T15:51:57.605Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-24T15:51:58.919Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions 200
+[debug] [2024-03-24T15:51:58.922Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-24T15:51:58.925Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd [none]
+[debug] [2024-03-24T15:51:59.540Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd 200

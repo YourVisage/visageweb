@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/component/Header";
+import { Suspense } from "react";
+import { Toaster } from "@/component/ui/toaster";
+import Navbar from "@/component/Navbar";
+import Footer from "@/component/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +21,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <section>
+          <Suspense
+            fallback={
+              <div className="flex w-full px-4 lg:px-40 py-4 items-center border-b text-center gap-8 justify-between h-[69px]" />
+            }
+          >
+            <Navbar />
+          </Suspense>
+        </section>
+        <main className="flex flex-1 flex-col items-center py-16">
+          {children}
+        </main>
+        <Toaster />
+        {/* <Analytics /> */}
+      </body>
     </html>
   );
 }
