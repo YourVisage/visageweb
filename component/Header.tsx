@@ -2,8 +2,16 @@
 
 import Link from 'next/link';
 import Image from "next/image";
+import { useContext } from 'react';
+import AuthContext from '@/app/context/authContext';
 
 const Header: React.FC = () => {
+  const {  userToken } = useContext(AuthContext);
+  const handleLogout = () => {
+    // Clear user data and token from localStorage
+    localStorage.removeItem('userToken');
+    // Clear user data and token from context
+  };
   return (
     <header className="bg-gray-800 py-4 my-2 px-4">
       <div className="container mx-auto flex justify-between items-center">
@@ -20,11 +28,11 @@ const Header: React.FC = () => {
           </Link>
         </div>
         {/* Navigation Links */}
-        <nav className="flex flex-grow justify-center">
+          <nav className="flex flex-grow justify-center">
           <ul className="flex space-x-4">
             <li>
               <Link href="/faceswap">
-                 <p className="text-white hover:text-gray-300">Царай солих</p>
+                 <p className="text-black hover:text-gray-300">Царай солих</p>
               </Link>
             </li>
             <div className='p-4'/>
@@ -36,13 +44,34 @@ const Header: React.FC = () => {
             {/* Add more navigation links as needed */}
           </ul>
         </nav>
-        
         {/* Login Button */}
-        <div>
+          {
+            userToken != null
+            ?
+            <>
+            <div className="p-4" />
+                <li>
+                  <Link href="/dashboard">
+                    <p className="text-white hover:text-gray-300">profile</p>
+                  </Link>
+                </li>
+                <div className="p-4" />
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="text-white hover:text-gray-300"
+                  >
+                    Logout
+                  </button>
+                </li>
+                </>
+          :
+          <div>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Login
+            logout
           </button>
         </div>
+          }
       </div>
     </header>
   );

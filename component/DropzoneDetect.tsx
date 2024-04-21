@@ -8,7 +8,7 @@ interface UploadProps {
     shouldRemoveFiles: boolean;
 }
 
-function Dropzone(props: UploadProps) {
+function DropZoneDetect(props: UploadProps) {
     const { type, onChange, remove, shouldRemoveFiles } = props;
     const [isDragged, setDragged] = useState(false);
     const [acceptedFiles, setAcceptedFiles] = useState<File[]>([]);
@@ -70,4 +70,4 @@ function Dropzone(props: UploadProps) {
     );
 }
 
-export default Dropzone;
+export default DropZoneDetect;

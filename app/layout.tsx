@@ -6,6 +6,8 @@ import { Suspense } from "react";
 import { Toaster } from "@/component/ui/toaster";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
+import { AuthProvider } from "./context/authContext";
+import MyApp from "./_app";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,20 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col">
-        <section>
-          <Suspense
-            fallback={
-              <div className="flex w-full px-4 lg:px-40 py-4 items-center border-b text-center gap-8 justify-between h-[69px]" />
-            }
-          >
-            <Navbar />
-          </Suspense>
-        </section>
-        <main className="flex flex-1 flex-col items-center py-16">
+        <MyApp>
           {children}
-        </main>
-        <Toaster />
-        {/* <Analytics /> */}
+        </MyApp>
       </body>
     </html>
   );

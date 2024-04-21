@@ -1,22 +1,35 @@
-[debug] [2024-03-24T15:51:03.551Z] ----------------------------------------------------------------------
-[debug] [2024-03-24T15:51:03.553Z] Command:       /Users/gantulga/.nvm/versions/node/v18.16.1/bin/node /Users/gantulga/.nvm/versions/node/v18.16.1/bin/firebase deploy
-[debug] [2024-03-24T15:51:03.553Z] CLI Version:   13.4.0
-[debug] [2024-03-24T15:51:03.553Z] Platform:      darwin
-[debug] [2024-03-24T15:51:03.553Z] Node Version:  v18.16.1
-[debug] [2024-03-24T15:51:03.554Z] Time:          Sun Mar 24 2024 23:51:03 GMT+0800 (Ulaanbaatar Standard Time)
-[debug] [2024-03-24T15:51:03.554Z] ----------------------------------------------------------------------
+[debug] [2024-03-27T14:19:58.915Z] ----------------------------------------------------------------------
+[debug] [2024-03-27T14:19:58.917Z] Command:       /usr/local/bin/firebase /Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase emulators:start --only hosting
+[debug] [2024-03-27T14:19:58.918Z] CLI Version:   13.0.2
+[debug] [2024-03-27T14:19:58.918Z] Platform:      darwin
+[debug] [2024-03-27T14:19:58.919Z] Node Version:  v18.5.0
+[debug] [2024-03-27T14:19:58.923Z] Time:          Wed Mar 27 2024 22:19:58 GMT+0800 (Ulaanbaatar Standard Time)
+[debug] [2024-03-27T14:19:58.924Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2024-03-24T15:51:03.608Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2024-03-24T15:51:03.608Z] > authorizing via signed-in user (ch.gantulga54@gmail.com)
-[debug] [2024-03-24T15:51:03.608Z] [iam] checking project deepface-a1dfd for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2024-03-24T15:51:03.610Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions [none]
-[debug] [2024-03-24T15:51:03.610Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions x-goog-quota-user=projects/deepface-a1dfd
-[debug] [2024-03-24T15:51:03.610Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-03-24T15:51:04.896Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions 200
-[debug] [2024-03-24T15:51:04.897Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-03-24T15:51:04.898Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd [none]
-[debug] [2024-03-24T15:51:05.380Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd 200
-[debug] [2024-03-24T15:51:05.380Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd {"projectId":"deepface-a1dfd","projectNumber":"642212907515","displayName":"DeepFace","name":"projects/deepface-a1dfd","resources":{"hostingSite":"deepface-a1dfd","realtimeDatabaseInstance":"deepface-a1dfd-default-rtdb","storageBucket":"deepface-a1dfd.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_bd90b55b-bab1-4976-bad8-ba5803a6a675"}
+[debug] [2024-03-27T14:19:59.152Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-27T14:19:59.154Z] > authorizing via signed-in user (ch.gantulga54@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2024-03-27T14:19:59.717Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-27T14:19:59.719Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-27T14:19:59.721Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-27T14:19:59.747Z] [hub] writing locator at /var/folders/fh/_2p_z8610fb4kwl7xqcnd22c0000gp/T/hub-deepface-a1dfd.json
+[debug] [2024-03-27T14:19:59.789Z] > refreshing access token with scopes: []
+[debug] [2024-03-27T14:19:59.794Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-03-27T14:19:59.794Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-27T14:20:00.142Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-03-27T14:20:00.142Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-27T14:20:00.155Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd [none]
+[debug] [2024-03-27T14:20:00.661Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd 200
+[debug] [2024-03-27T14:20:00.662Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd {"projectId":"deepface-a1dfd","projectNumber":"642212907515","displayName":"DeepFace","name":"projects/deepface-a1dfd","resources":{"hostingSite":"deepface-a1dfd","realtimeDatabaseInstance":"deepface-a1dfd-default-rtdb","storageBucket":"deepface-a1dfd.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_21fade0e-99da-4c0c-8dac-cd1412e3cd04"}
+[debug] [2024-03-27T14:20:05.805Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites pageToken=&pageSize=10
+[debug] [2024-03-27T14:20:06.681Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites 200
+[debug] [2024-03-27T14:20:06.682Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites {"sites":[{"name":"projects/deepface-a1dfd/sites/deepface-a1dfd","defaultUrl":"https://deepface-a1dfd.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-27T14:20:06.685Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites 
+[debug] [2024-03-27T14:20:07.415Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites 200
+[debug] [2024-03-27T14:20:07.416Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites {"sites":[{"name":"projects/deepface-a1dfd/sites/deepface-a1dfd","defaultUrl":"https://deepface-a1dfd.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-27T14:20:07.417Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd/webApps/-/config [none]
+[debug] [2024-03-27T14:20:08.981Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd/webApps/-/config 200
+[debug] [2024-03-27T14:20:08.986Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd/webApps/-/config {"projectId":"deepface-a1dfd","databaseURL":"https://deepface-a1dfd-default-rtdb.firebaseio.com","storageBucket":"deepface-a1dfd.appspot.com","locationId":"us-central","apiKey":"AIzaSyC0io2eH_7oE45wLxzc7uDV3XHQcgHcZrA","authDomain":"deepface-a1dfd.firebaseapp.com","messagingSenderId":"642212907515"}
 [info] 
    Thank you for trying our early preview of Next.js support on Firebase Hosting.
    During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
@@ -28,29 +41,63 @@
 
    We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-[debug] [2024-03-24T15:51:11.677Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites/deepface-a1dfd [none]
-[debug] [2024-03-24T15:51:12.395Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites/deepface-a1dfd 200
-[debug] [2024-03-24T15:51:12.395Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites/deepface-a1dfd {"name":"projects/deepface-a1dfd/sites/deepface-a1dfd","defaultUrl":"https://deepface-a1dfd.web.app","type":"DEFAULT_SITE"}
-[info] You are using Node.js 18.16.1. For Next.js, Node.js version >= v18.17.0 is required.
-
-[debug] [2024-03-24T15:51:12.705Z] Error: ENOENT: no such file or directory, open '/Users/gantulga/Documents/diplomud/visagepro/.next/export-marker.json'
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[debug] [2024-03-27T14:21:20.818Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:820:11)
+    at Object.execSync (node:child_process:891:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:372:42)
+    at async Object.startAll (/Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/controller.js:303:9)
+    at async /Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/commands/emulators-start.js:33:43
 [error] 
 [error] Error: An unexpected error has occurred.
-[debug] [2024-03-24T15:51:57.352Z] ----------------------------------------------------------------------
-[debug] [2024-03-24T15:51:57.355Z] Command:       /usr/local/bin/firebase /Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
-[debug] [2024-03-24T15:51:57.356Z] CLI Version:   13.0.2
-[debug] [2024-03-24T15:51:57.357Z] Platform:      darwin
-[debug] [2024-03-24T15:51:57.357Z] Node Version:  v18.5.0
-[debug] [2024-03-24T15:51:57.369Z] Time:          Sun Mar 24 2024 23:51:57 GMT+0800 (Ulaanbaatar Standard Time)
-[debug] [2024-03-24T15:51:57.370Z] ----------------------------------------------------------------------
+[debug] [2024-03-27T14:23:36.893Z] ----------------------------------------------------------------------
+[debug] [2024-03-27T14:23:36.897Z] Command:       /usr/local/bin/firebase /Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase emulators:start --only hosting
+[debug] [2024-03-27T14:23:36.899Z] CLI Version:   13.0.2
+[debug] [2024-03-27T14:23:36.899Z] Platform:      darwin
+[debug] [2024-03-27T14:23:36.899Z] Node Version:  v18.5.0
+[debug] [2024-03-27T14:23:36.907Z] Time:          Wed Mar 27 2024 22:23:36 GMT+0800 (Ulaanbaatar Standard Time)
+[debug] [2024-03-27T14:23:36.907Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2024-03-24T15:51:57.593Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2024-03-24T15:51:57.595Z] > authorizing via signed-in user (ch.gantulga54@gmail.com)
-[debug] [2024-03-24T15:51:57.597Z] [iam] checking project deepface-a1dfd for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2024-03-24T15:51:57.602Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions [none]
-[debug] [2024-03-24T15:51:57.604Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions x-goog-quota-user=projects/deepface-a1dfd
-[debug] [2024-03-24T15:51:57.605Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-03-24T15:51:58.919Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions 200
-[debug] [2024-03-24T15:51:58.922Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deepface-a1dfd:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-03-24T15:51:58.925Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd [none]
-[debug] [2024-03-24T15:51:59.540Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd 200
+[debug] [2024-03-27T14:23:37.149Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-27T14:23:37.152Z] > authorizing via signed-in user (ch.gantulga54@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2024-03-27T14:23:37.680Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-27T14:23:37.682Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-27T14:23:37.684Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-27T14:23:37.710Z] [hub] writing locator at /var/folders/fh/_2p_z8610fb4kwl7xqcnd22c0000gp/T/hub-deepface-a1dfd.json
+[debug] [2024-03-27T14:23:37.750Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd [none]
+[debug] [2024-03-27T14:23:38.269Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd 200
+[debug] [2024-03-27T14:23:38.270Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd {"projectId":"deepface-a1dfd","projectNumber":"642212907515","displayName":"DeepFace","name":"projects/deepface-a1dfd","resources":{"hostingSite":"deepface-a1dfd","realtimeDatabaseInstance":"deepface-a1dfd-default-rtdb","storageBucket":"deepface-a1dfd.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_21fade0e-99da-4c0c-8dac-cd1412e3cd04"}
+[debug] [2024-03-27T14:23:43.445Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites pageToken=&pageSize=10
+[debug] [2024-03-27T14:23:44.248Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites 200
+[debug] [2024-03-27T14:23:44.250Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites {"sites":[{"name":"projects/deepface-a1dfd/sites/deepface-a1dfd","defaultUrl":"https://deepface-a1dfd.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-27T14:23:44.255Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites 
+[debug] [2024-03-27T14:23:44.934Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites 200
+[debug] [2024-03-27T14:23:44.934Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/deepface-a1dfd/sites {"sites":[{"name":"projects/deepface-a1dfd/sites/deepface-a1dfd","defaultUrl":"https://deepface-a1dfd.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-03-27T14:23:44.935Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd/webApps/-/config [none]
+[debug] [2024-03-27T14:23:46.350Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd/webApps/-/config 200
+[debug] [2024-03-27T14:23:46.355Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deepface-a1dfd/webApps/-/config {"projectId":"deepface-a1dfd","databaseURL":"https://deepface-a1dfd-default-rtdb.firebaseio.com","storageBucket":"deepface-a1dfd.appspot.com","locationId":"us-central","apiKey":"AIzaSyC0io2eH_7oE45wLxzc7uDV3XHQcgHcZrA","authDomain":"deepface-a1dfd.firebaseapp.com","messagingSenderId":"642212907515"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 14.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[debug] [2024-03-27T14:24:51.486Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:820:11)
+    at Object.execSync (node:child_process:891:15)
+    at execSync (pkg/prelude/bootstrap.js:2111:30)
+    at prepareFrameworks (/Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/frameworks/index.js:372:42)
+    at async Object.startAll (/Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/emulator/controller.js:303:9)
+    at async /Users/gantulga/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/commands/emulators-start.js:33:43
+[error] 
+[error] Error: An unexpected error has occurred.

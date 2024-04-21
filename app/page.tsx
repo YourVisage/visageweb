@@ -1,28 +1,19 @@
 'use client'
-/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
-import Dropzone from "@/component/Dropzone";
-import Generate from "@/component/Generate";
 import Link from "next/link";
 import hero from "/public/hero.png";
-// import { Button } from "@radix-ui/themes";
 import ExplainerSection from "@/component/ExplainerSection";
 import { Button } from "@/component/ui/button";
 
-
-function useHover() {
-  const [isHovering, setIsHovering] = useState(false);
-
-  const onMouseEnter = () => {
-    setIsHovering(true);
-  };
-
-  const onMouseLeave = () => setIsHovering(false);
-
-  return { isHovering, onMouseEnter, onMouseLeave };
-}
-
 export default function Home() {
+
+  let token : string | null = '';
+  useEffect(() => {
+    token = localStorage.getItem('access_key')
+    setToken(token ?? '')
+  }, []);
+  const [ userToken, setToken ] = useState(token ?? '')
+
   return (
     <div className="flex flex-col items-center pt-1">
     <div className="flex flex-col lg:flex-row items-center gap-8 p-8 max-w-6xl w-full">
@@ -34,9 +25,15 @@ export default function Home() {
         Хаана ч ашиглаж болох зурагаа үүсгэж цаг зав мөнгөө хэмнэ!
         </p>
         <div className="flex flex-col space-y-2">
-          <Link href="/faceswap">
-            <Button className="w-full lg:w-1/2 bg-blue-600 text-white rounded-xl">Зураг үүсгэх</Button>
-          </Link>
+        {userToken != null ? (
+              <Link href="/faceswap">
+                <Button className="w-full lg:w-1/2 bg-blue-600 text-white rounded-xl">Зураг үүсгэх</Button>
+              </Link>
+            ) : (
+              <Link href="/login">
+                <Button className="w-full lg:w-1/2 bg-blue-600 text-white rounded-xl">Нэвтрэх</Button>
+              </Link>
+            )}
         </div>
       </div>
       <div className="lg:w-1/2 w-full mt-8 lg:mt-0">

@@ -1,45 +1,53 @@
 'use client'
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
+import React, {useState } from 'react'
 import axios from 'axios';
 import { Button } from '@/component/ui/button';
-import { Row } from '@radix-ui/themes/src/components/table.jsx';
 
 const LoginPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
-  const submit = async (e: any) => {
-    e.preventDefault(); // Prevent default form submission
-    if (!validateEmail(email)) {
-      setError("Invalid email format");
+  const handleSubmit = async (e: any) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // Validation for email field
+    if (!email) {
+      setError("Email is required");
       return;
     }
-    const formData = new FormData();
-    formData.append('email', email);
-    const localUrl = "http://127.0.0.1:8000/login";
 
     try {
-      const response = await axios.post(localUrl, formData);
-      console.log(response.data)
-      router.push("/faceswap"); // Redirect to dashboard after successful login
+      // Make API request to login endpoint using Axios
+      const response = await axios.post('http://172.20.10.4:8000/login', {
+        email: email
+      }, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+  
+      // Assuming successful login redirects to dashboard page
+      if (response.status === 200) {
+        // Handle the response data (access_token) here
+        console.log("Access Token:", response.data.access_token);
+        localStorage.setItem('access_token', response.data.access_token);
+        // Redirect to dashboard page or store token in state/storage as needed
+        router.push('/faceswap'); // Redirect to dashboard page
+      }
     } catch (error) {
-      alert('An error occurred while swapping images. Please try again.');
-      console.error('Model Error: ', error);
+      // Handle error responses from the server
+      setError("An error occurred. Please try again.");
+      console.error("Login error:", error);
     }
-  };
-
-  const validateEmail = (email: string) => {
-    // Basic email validation
-    const re = /\S+@\S+\.\S+/;
-    return re.test(email);
   };
 
   return (
     <div>
       <ul>
-      <form onSubmit={submit}>
+      <form onSubmit={handleSubmit}>
         <input
           type="email"
           placeholder="Email"

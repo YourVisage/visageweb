@@ -1,8 +1,9 @@
 'use client'
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Dropzone from "@/component/Dropzone";
 import Generate from "@/component/Generate";
+import AuthContext from "../context/authContext";
 
 function useHover() {
   const [isHovering, setIsHovering] = useState(false);
@@ -18,6 +19,7 @@ function useHover() {
 
 export default function FaceSwap() {
   const [loading, setLoading] = useState(false);
+
 
   const { isHovering, onMouseEnter, onMouseLeave } = useHover();
  
@@ -58,7 +60,7 @@ export default function FaceSwap() {
             <p className="font-medium text-lg">Нүүр солих хөгжилтэй тоглоомууд зөвхөн эхлэл байсан. Технологийн цоо шинэ дэвшлийн ертөнцөд үсрэлт хийцгээе.</p>
           </div>
           {generatedImage == null ? (
-            <div className="h-32 relative w-full space-y-2 rounded-xl bg-white">
+            <div className="h-32 relative w-full space-y-2 rounded-xl bg-black">
               {['face', 'bg'].map((type) => (
                 <Dropzone key={type} type={type} onChange={(files) => handleSetFiles(type, files)} remove={removeFiles}
                   shouldRemoveFiles={shouldRemoveFiles} />
@@ -75,7 +77,7 @@ export default function FaceSwap() {
                 <div className={`absolute top-0 left-0 w-full h-full z-99 p-4 bg-white/70 ${isHovering ? 'opacity-100' : 'opacity-0'}
                  transition-opacity duration-300`}>
                   <a href={generatedImage} download="generated_image.png">
-                    <button className="w-full rounded-lg font-bold cursor-pointer text-center bg-black text-green-600 px-4 py-2" >
+                    <button className="w-full rounded-lg font-bold cursor-pointer text-center bg-white text-black px-4 py-2" >
                       Татах</button>
                   </a>
                 </div>
