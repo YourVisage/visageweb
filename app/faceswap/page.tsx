@@ -1,5 +1,4 @@
 'use client'
-/* eslint-disable @next/next/no-img-element */
 import { useContext, useEffect, useState } from "react";
 import Dropzone from "@/component/Dropzone";
 import Generate from "@/component/Generate";
@@ -23,10 +22,6 @@ export default function FaceSwap() {
 
   const { isHovering, onMouseEnter, onMouseLeave } = useHover();
  
-  useEffect(() => {
-    // Fetch Python API...
-  }, []);
-
   const [files, setFiles] = useState<{ face: File[] | null, bg: File[] | null }>({ face: null, bg: null });
   const [generatedImage, setGeneratedImage] = useState<any | null>(null);
   const [generatedImagesArray, setGeneratedImagesArray] = useState<Array<{ original_images: File[], generated_image: any }>>([]);

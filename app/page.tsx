@@ -1,17 +1,25 @@
 'use client'
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import hero from "/public/hero.png";
 import ExplainerSection from "@/component/ExplainerSection";
 import { Button } from "@/component/ui/button";
 
 export default function Home() {
-
+  const router = useRouter();
   let token : string | null = '';
+  console.log(localStorage.getItem('access_token'))
   useEffect(() => {
-    token = localStorage.getItem('access_key')
+    token = localStorage.getItem('access_token')
     setToken(token ?? '')
-  }, []);
+    if(!token){
+      router.push('/login');
+    } else {
+      
+
+    }
+  }, [router]);
   const [ userToken, setToken ] = useState(token ?? '')
 
   return (
