@@ -13,7 +13,7 @@ interface GenerateProps {
 enum LoadingStatus {
   Idle = 'Working on it',
   Generating = 'Wait for magic',
-  Swapping = 'It takes like 45 seconds.',
+  Swapping = 'It takes like 30 seconds.',
   OnClose = 'Working with pixels',
 }
 
@@ -27,7 +27,7 @@ export default function Generate(props: GenerateProps) {
   const handleImageSwap = async () => {
 
     if (!face || !bg) {
-      alert('Please select both face and real images.');
+      alert('Та 2 зургаа сонгоно уу.');
       return;
     }
 
@@ -36,7 +36,7 @@ export default function Generate(props: GenerateProps) {
     formData.append('face_to_swap', face[0]);
     formData.append('real_image', bg[0]);
 
-    const localUrl = "http://172.20.10.4:8000/api/swap-image";
+    const localUrl = "http://192.168.1.239:8000/api/swap-image";
 
     try {
       const response = await axios.post(localUrl, formData);
@@ -44,7 +44,7 @@ export default function Generate(props: GenerateProps) {
       console.log(response.data.result_image)
       onChange(`data:image/png;base64,${response.data.result_image}`)
     } catch (error) {
-      alert('An error occurred while swapping images. Please try again.');
+      alert('зураг солиход алдаа гарлаа, Дахин оролдож үзнэ үү');
       console.error('Model Error: ', error);
     } finally {
       setLoading(false);

@@ -1,8 +1,8 @@
 'use client';
-import { Button } from '@/component/ui/button';
 import React, { useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios'; // Import axios for making HTTP requests
+import { Button } from 'antd';
 
 const thumbsContainer = {
   display: 'flex',
@@ -15,11 +15,8 @@ const thumb = {
   display: 'flex',
   borderRadius: 2,
   border: '1px solid #eaeaea',
-  marginBottom: 8,
-  marginRight: 8,
-  width: 200, // Reduce thumbnail size for better layout
+  width: 200,
   height: 200,
-  padding: 4,
   boxSizing: 'border-box'
 };
 
@@ -27,7 +24,7 @@ const img = {
   display: 'block',
   width: '100%',
   height: '100%',
-  objectFit: 'cover' // Ensure image fits inside thumbnail container
+  objectFit: 'cover'
 };
 
 function DetectPage() {
@@ -62,15 +59,14 @@ function DetectPage() {
     const formData = new FormData();
     formData.append('image', files[0]); // Assuming only one file is selected
 
-    const apiUrl = 'http://172.20.10.4:8000/detect';
+    const apiUrl = 'http://192.168.1.239:8000/detect';
 
     try {
       const response = await axios.post(apiUrl, formData);
       console.log('Response Data:', response.data.class);
-      setDetect(response.data.class)
+      setDetect(response.data.class);
       console.log('Response Data:', response.data.confidence_score);
-      setConfidence(response.data.confidence_score)
-      // Handle the response data here (update state, display result, etc.)
+      setConfidence(response.data.confidence_score);
     } catch (error) {
       console.error('Image Upload Error:', error);
       alert('An error occurred while uploading the image. Please try again.');
@@ -85,19 +81,23 @@ function DetectPage() {
   }, [files]);
 
   return (
-    <div className="container">
-      <section className="border flex justify-center">
-        <div {...getRootProps({ className: 'dropzone flex items-center text-center justify-between border border-dashed p-2 rounded-xl transition-all duration-400 h-full w-full border-black"' })}>
-          <input {...getInputProps()}  />
-          <p clas>Зураг оруулна уу</p>
+    <div className="p-8">
+      <section className=" flex justify-center">
+        <div {...getRootProps({ className: 'dropzone flex flex-col items-center text-center justify-between border border-dashed p-2 rounded-xl transition-all duration-400 border-black' })}>
+          <input {...getInputProps()} />
+          <p>Зураг оруулна уу</p>
+          <div style={thumbsContainer}>{thumbs}</div>
         </div>
+        
       </section>
-      <aside style={thumbsContainer}>{thumbs}</aside>
-      <p>{detect}</p>
+     <div className="justify-center text-center p-5" >
+     <p>{
+      detect == 'Real' ? 'Энгийн': 'Хуурамч'}</p>
       <p>{confidence}</p>
-      <Button type="button" onClick={handleImageSwap}>
+      <Button type="dashed" onClick={handleImageSwap} className='mt-2' >
         таних
       </Button>
+     </div>
     </div>
   );
 }

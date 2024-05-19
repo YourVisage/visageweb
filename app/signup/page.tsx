@@ -12,6 +12,7 @@ const LoginPage = () => {
   const router = useRouter();
   const { setToken, setName } = useAuth();
   const [email, setEmail] = useState("");
+  const [name, setNamed] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -25,7 +26,7 @@ const LoginPage = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://192.168.1.239:8000/login', { email }, {
+      const response = await axios.post('http://192.168.1.239:8000/register', { email, name }, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -33,7 +34,8 @@ const LoginPage = () => {
       });
 
       if (response.status === 200) {
-        const userdata = await axios.get(`http://192.168.1.239:8000/user/${response.data.access_token}`, {
+        console.log(response.data.uid)
+        const userdata = await axios.get(`http://192.168.1.239:8000/user/${response.data.uid}`, {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -41,7 +43,7 @@ const LoginPage = () => {
         });
 
         if (userdata.status === 200) {
-          localStorage.setItem('access_token', response.data.access_token);
+          localStorage.setItem('access_token', response.data.uid);
           localStorage.setItem('name', userdata.data.name);
           setToken(response.data.access_token);
           setName(userdata.data.name);
@@ -53,7 +55,7 @@ const LoginPage = () => {
       console.error("Login error:", error);
     } finally {
       setLoading(false);
-    }
+    } 
   };
 
   return (
@@ -65,7 +67,13 @@ const LoginPage = () => {
             Sign in or create an account to get started.
           </p>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
-            <div className={styles.title}>Нэвтрэх</div>
+            <Input
+              onChange={(e) => setNamed(e.target.value)}
+              value={name}
+              prefix={<UserOutlined />}
+              placeholder="Нэр"
+              className={styles.input}
+            />
             <Input
               onChange={(e) => setEmail(e.target.value)}
               value={email}
@@ -74,9 +82,8 @@ const LoginPage = () => {
               className={styles.input}
             />
             <Button type="default" htmlType="submit" color='blue'>
-              <p className="text-black">Нэвтрэх</p>
+              <p className="text-black">Бүртгүүлэх</p>
             </Button>
-            <a href="/signup" className={styles.signupLink}>Бүртгүүлэх</a>
           </form>
           {loading && (
             <div className={styles.loaderContainer}>

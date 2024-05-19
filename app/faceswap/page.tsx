@@ -79,7 +79,7 @@ export default function FaceSwap() {
                 <img src={generatedImage} className="h-full object-cover rounded-lg" alt="Swapped Image" />
               </div>
               <button onClick={removeFiles} className="h-10 hover:border transition-all my-2 rounded-lg w-full
-              bg-white text-center font-bold flex items-center justify-center shadow-lg text-black">Хувиргалт цэвэрлэх</button>
+              bg-white text-center font-bold flex items-center justify-center shadow-lg text-black">буцах</button>
             </div>
           )}
         </div>
