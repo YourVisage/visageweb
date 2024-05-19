@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from "next/image";
 import { useContext } from 'react';
-import AuthContext from '@/app/context/authContext';
+import AuthContext from '@/app/dashboard/context/authContext';
 
 const Header: React.FC = () => {
   const {  userToken } = useContext(AuthContext);

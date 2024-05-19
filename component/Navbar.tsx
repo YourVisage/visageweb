@@ -37,20 +37,20 @@ export default function Navbar() {
   return (
     <div className="flex w-full px-4 lg:px-40 py-4 items-center border-b text-center gap-8 justify-between">
       <div className="flex gap-2 h-full">
-        <Link href="/">
+        <Link href="/dashboard">
           <h2 className="font-bold">Visage AI</h2>
         </Link>
       </div>
       {tokend && (
         <div className="hidden lg:flex flex-row gap-2">
-          <Link href="/faceswap">
+          <Link href="/dashboard/faceswap">
             <Button variant="ghost">Царай солих</Button>
           </Link>
         </div>
       )}
       {tokend && (
         <div className="hidden lg:flex flex-row gap-2">
-          <Link href="/detect">
+          <Link href="/dashboard/detect">
             <Button variant="ghost">Нүүр танилт</Button>
           </Link>
         </div>
