@@ -59,7 +59,7 @@ function DetectPage() {
     const formData = new FormData();
     formData.append('image', files[0]); // Assuming only one file is selected
 
-    const apiUrl = 'http://192.168.1.239:8000/detect';
+    const apiUrl = 'http://192.168.1.141:8000/detect';
 
     try {
       const response = await axios.post(apiUrl, formData);
@@ -92,7 +92,7 @@ function DetectPage() {
       </section>
      <div className="justify-center text-center p-5" >
      <p>{
-      detect == 'Real' ? 'Энгийн': 'Хуурамч'}</p>
+      detect}</p>
       <p>{confidence}</p>
       <Button type="dashed" onClick={handleImageSwap} className='mt-2' >
         таних

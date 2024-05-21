@@ -25,7 +25,7 @@ const LoginPage = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://192.168.1.239:8000/login', { email }, {
+      const response = await axios.post('http://192.168.1.141:8000/login', { email }, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const LoginPage = () => {
       });
 
       if (response.status === 200) {
-        const userdata = await axios.get(`http://192.168.1.239:8000/user/${response.data.access_token}`, {
+        const userdata = await axios.get(`http://192.168.1.141:8000/user/${response.data.access_token}`, {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -60,9 +60,9 @@ const LoginPage = () => {
     <div className='flex flex-col flex-1'>
       <div className="flex items-center justify-center p-8">
         <div className="flex flex-col gap-4 bg-neutral-50 border border-neutral-200 p-4 rounded-xl max-w-sm w-full">
-          <h1 className="text-xl">Welcome</h1>
+          <h1 className="text-xl">Тавтай морил</h1>
           <p className="text-xs opacity-60">
-            Sign in or create an account to get started.
+          Эхлэхийн тулд нэвтрэх эсвэл бүртгэл үүсгэнэ үү
           </p>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
             <div className={styles.title}>Нэвтрэх</div>

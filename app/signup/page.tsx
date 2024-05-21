@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import styles from './login.module.css';
 import { useAuth } from '@/context/auth-context';
 
-const LoginPage = () => {
+const SignUpPage = () => {
   const router = useRouter();
   const { setToken, setName } = useAuth();
   const [email, setEmail] = useState("");
@@ -26,7 +26,7 @@ const LoginPage = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://192.168.1.239:8000/register', { email, name }, {
+      const response = await axios.post('http://192.168.1.141:8000/register', { email, name }, {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ const LoginPage = () => {
 
       if (response.status === 200) {
         console.log(response.data.uid)
-        const userdata = await axios.get(`http://192.168.1.239:8000/user/${response.data.uid}`, {
+        const userdata = await axios.get(`http://192.168.1.141:8000/user/${response.data.uid}`, {
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ const LoginPage = () => {
         if (userdata.status === 200) {
           localStorage.setItem('access_token', response.data.uid);
           localStorage.setItem('name', userdata.data.name);
-          setToken(response.data.access_token);
+          setToken(response.data.uid);
           setName(userdata.data.name);
           router.push('/');
         }
@@ -55,17 +55,14 @@ const LoginPage = () => {
       console.error("Login error:", error);
     } finally {
       setLoading(false);
-    } 
+    }
   };
 
   return (
     <div className='flex flex-col flex-1'>
       <div className="flex items-center justify-center p-8">
         <div className="flex flex-col gap-4 bg-neutral-50 border border-neutral-200 p-4 rounded-xl max-w-sm w-full">
-          <h1 className="text-xl">Welcome</h1>
-          <p className="text-xs opacity-60">
-            Sign in or create an account to get started.
-          </p>
+          <h1 className="text-xl">Бүртгэл</h1>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
             <Input
               onChange={(e) => setNamed(e.target.value)}
@@ -96,4 +93,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignUpPage;

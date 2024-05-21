@@ -36,7 +36,7 @@ export default function Generate(props: GenerateProps) {
     formData.append('face_to_swap', face[0]);
     formData.append('real_image', bg[0]);
 
-    const localUrl = "http://192.168.1.239:8000/api/swap-image";
+    const localUrl = "http://192.168.1.141:8000/api/swap-image";
 
     try {
       const response = await axios.post(localUrl, formData);
